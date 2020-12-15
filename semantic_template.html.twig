@@ -81,6 +81,23 @@
     {{- block('form_widget_simple') -}}
 {% endblock dateinterval_widget %}
 
+{% block filter_date_range_widget %}
+    <div class="filter-date-range">
+        <div class="ui calendar">
+            <div class="ui input left icon">
+            <i class="calendar icon"></i>
+            {{ form_widget(form.left_date, {'attr': attr}) }}
+            </div>
+        </div>
+        <div class="ui calendar">
+            <div class="ui input left icon">
+            <i class="calendar icon"></i>
+            {{ form_widget(form.right_date, {'attr': attr}) }}
+            </div>
+         </div>
+    </div>
+{% endblock filter_date_range_widget %}
+
 {% block checkbox_widget -%}
     <div class="ui toggle checkbox">
         {% set attr = attr|merge({class: (attr.class|default('') ~ ' hidden')|trim}) %}
